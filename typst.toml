@@ -1,0 +1,10 @@
+[package]
+name = "ruc-thesis-typst"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["ruc-thesis"]
+license = "MIT"
+description = "中国人民大学本科生毕业论文 Typst 模板"
+repository = "https://github.com/ruc-thesis/ruc-thesis-typst"
+keywords = ["thesis", "ruc", "template", "typst"]
+compiler = "0.13"
