@@ -15,7 +15,7 @@
   show table: three-line-table
 
   set par(
-    leading: 1.02em,
+    leading: 1.02em, // typst 与 word 定义行距方式并不相同，这里靠目押:(
     spacing: 1.02em,
     first-line-indent: (amount: 2em, all: true),
     justify: true,
@@ -77,6 +77,8 @@
   show heading.where(level: 4): set text(size: zh(5))
   show heading.where(level: 5): set text(size: zh(5))
 
+  // 有序列表设置编号的方式比较 tricky
+  // ref: https://forum.typst.app/t/how-to-customize-numbering-for-nested-enum-items/3881/3
   set enum(
     indent: 2em,
     full: true,
@@ -87,13 +89,14 @@
       numbering(number, ..n.slice(level - 1))
     },
   )
-  set list(indent: 2em, marker: ([●], [○], [■]))
-  show list: it => {
+  // typst嵌套会继承父类的缩进，所以无需再缩进
+  show enum: it => {
     set list(indent: 0em)
     set enum(indent: 0em)
     it
   }
-  show enum: it => {
+  set list(indent: 2em, marker: ([●], [○], [■]))
+  show list: it => {
     set list(indent: 0em)
     set enum(indent: 0em)
     it
@@ -104,6 +107,8 @@
 
   set math.equation(numbering: "(1)")
   show math.equation.where(block: true): set block(breakable: true)
+  // 只有带标签的才会编号，带编号的会顶格
+  // ref: https://forum.typst.app/t/how-to-conditionally-enable-equation-numbering-for-labeled-equations/977/14
   show math.equation.where(block: true): it => {
     if not it.has("label") [
       #counter(math.equation).update(v => v - 1)
@@ -116,5 +121,11 @@
     }
   }
 
+  set footnote(numbering: "①")
+  show footnote.entry: set text(font: songti, size: zh(5.5))
+
+  // word和typst都会在标题顶格时去掉标题上方的空隙
+  // 但是在文章开始时需要空隙
+  v(0.75em)
   body
 }
