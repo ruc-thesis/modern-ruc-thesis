@@ -3,9 +3,11 @@
 
 #import "./fonts.typ": *
 #import "./utils.typ": three-line-table
+#import "./acknowledgement.typ": acknowledgement-page
 
 
-#let body-style(body) = {
+
+#let body-style(body, acknowledgement: none) = {
   show table: three-line-table
 
   counter(page).update(1)
@@ -17,12 +19,10 @@
       [第 #page_num 页]
     },
   )
-
+  // typst 与 word 定义行距方式并不相同，这里靠目押:(
   set par(
-    leading: 1.02em, // typst 与 word 定义行距方式并不相同，这里靠目押:(
+    leading: 1.02em,
     spacing: 1.02em,
-    first-line-indent: (amount: 2em, all: true),
-    justify: true,
   )
 
   set text(font: songti, size: zh(4.5))
@@ -110,4 +110,14 @@
   set par(first-line-indent: 0em)
   text(font: heiti, size: 14pt, weight: "bold")[作者签名：]
   box(width: 8em, stroke: (bottom: 1pt + black))
+
+  if acknowledgement != none {
+    pagebreak()
+
+    set heading(numbering: none)
+    [
+      = 致谢
+      #acknowledgement
+    ]
+  }
 }

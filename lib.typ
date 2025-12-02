@@ -24,6 +24,8 @@
   keywords-zh: (),
   abstract-en: [],
   keywords-en: (),
+  acknowledgement: none,
+  appendix: none,
   body,
 ) = {
   show: show-cn-fakebold
@@ -56,5 +58,5 @@
     keywords-en: keywords-en,
   )
   outline-page()
-  body-style(body)
+  body-style(body, acknowledgement: acknowledgement, appendix: appendix)
 }

@@ -24,6 +24,9 @@
     The abstract usually contains the research background, purpose, methods, results, and conclusions.
   ],
   keywords-en: ("Keyword1", "Keyword2", "Keyword3"),
+  acknowledgement: [
+    致谢内容。
+  ],
 )
 
 #include "chapters/chapter1.typ"
