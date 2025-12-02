@@ -3,11 +3,10 @@
 
 #import "./fonts.typ": *
 #import "./utils.typ": three-line-table
-#import "./acknowledgement.typ": acknowledgement-page
 
 
 
-#let body-style(body, acknowledgement: none) = {
+#let body-style(body) = {
   show table: three-line-table
 
   counter(page).update(1)
@@ -105,19 +104,4 @@
   // 但是word不会去掉第一页的space，所以这里加上
   v(0.8em)
   body
-
-  v(3.2em)
-  set par(first-line-indent: 0em)
-  text(font: heiti, size: 14pt, weight: "bold")[作者签名：]
-  box(width: 8em, stroke: (bottom: 1pt + black))
-
-  if acknowledgement != none {
-    pagebreak()
-
-    set heading(numbering: none)
-    [
-      = 致谢
-      #acknowledgement
-    ]
-  }
 }

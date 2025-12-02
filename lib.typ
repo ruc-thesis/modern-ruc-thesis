@@ -1,12 +1,14 @@
 #import "@preview/cuti:0.4.0": show-cn-fakebold
 
 #import "src/abstract.typ": abstract
+#import "src/acknownlege.typ": acknowledgement-page
+#import "src/appendix.typ": appendix-page
 #import "src/body.typ": body-style
 #import "src/cover.typ": cover
 #import "src/declaration.typ": declaration
 #import "src/header.typ": header
 #import "src/outline.typ": outline-page
-
+#import "src/signature.typ": signature
 
 #let project(
   title: "",
@@ -58,5 +60,16 @@
     keywords-en: keywords-en,
   )
   outline-page()
-  body-style(body, acknowledgement: acknowledgement, appendix: appendix)
+
+  show: body-style
+  body
+  signature()
+
+  if appendix != none {
+    appendix-page(appendix)
+  }
+
+  if acknowledgement != none {
+    acknowledgement-page(acknowledgement)
+  }
 }

@@ -1,4 +1,5 @@
-#import "../lib.typ": project
+#import "../lib.typ": project, acknowledgement-page
+
 
 #show: project.with(
   title: "对毕业论文模板的研究",
@@ -26,6 +27,9 @@
   keywords-en: ("Keyword1", "Keyword2", "Keyword3"),
   acknowledgement: [
     致谢内容。
+  ],
+  appendix: [
+    这里是附录内容。
   ],
 )
 
