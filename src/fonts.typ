@@ -7,6 +7,9 @@
 // 黑体 (标题默认)
 #let heiti = ("Times New Roman", "SimHei", "STHeiti", "Heiti SC")
 
+// 纯黑体 (无 Times New Roman)
+#let pure-heiti = ("SimHei", "STHeiti", "Heiti SC")
+
 // 楷体 (强调/引用)
 #let kaiti = ("Times New Roman", "KaiTi", "STKaiti", "Kaiti SC")
 

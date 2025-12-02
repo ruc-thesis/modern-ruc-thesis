@@ -1,7 +1,7 @@
 #import "../lib.typ": project
 
 #show: project.with(
-  title: "对Typst毕业论文模板的研究",
+  title: "对毕业论文模板的研究",
   subtitle: "一个Typst模板",
   author: "张三",
   school: "信息学院",
@@ -10,7 +10,8 @@
   student-id: "2022000000",
   advisor: "李四",
   score: "90分",
-  date: "2026年3月",
+  date: "2026年3月10日",
+  encoding: "RUC-BK-050101-2021000000",
   abstract: [
     这是中文摘要。本文旨在测试Typst模板的各种样式和功能。
 

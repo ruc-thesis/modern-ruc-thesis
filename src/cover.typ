@@ -3,6 +3,30 @@
 #import "./fonts.typ": *
 
 
+#let dist-text(content, width: 4em) = {
+  block(width: width, {
+    let clusters = content.clusters()
+    if clusters.len() == 1 {
+      align(center, content)
+    } else {
+      stack(dir: ltr, spacing: 1fr, ..clusters)
+    }
+  })
+}
+
+#let underline-cell(content, width: 220pt) = {
+  box(
+    width: width,
+    stroke: (bottom: 1pt + black),
+    outset: (bottom: 5pt),
+    align(center, content),
+  )
+}
+
+#let info-row(key, value) = {
+  (dist-text(key), [：], underline-cell(value))
+}
+
 #let cover(
   title: "",
   subtitle: "",
@@ -16,70 +40,46 @@
   date: "",
   encoding: "",
 ) = {
-  // 论文编码
+  set text(font: pure-heiti, weight: "bold")
+  // fakebold不能加粗英文，这里自己设置
+  show text.where(weight: "bold"): set text(stroke: 0.0285em)
+
   align(right)[
-    #text(font: heiti, size: 12pt, weight: "bold")[论文编码：]
+    #text(size: 12pt)[论文编码：*#encoding*]   
   ]
-
-  v(1cm)
-
-  // 文头
+  v(-1em)
   align(center)[
-    #text(font: heiti, size: 28pt, weight: "bold")[中国人民大学本科毕业论文（设计）]
+    #text(size: 28pt)[中国人民大学本科毕业论文（设计）]
   ]
 
-  v(2em)
+  v(3em)
 
-  // 论文题名
   align(center)[
-    #text(font: heiti, size: 28pt, weight: "bold")[#title]
+    #text(size: 28pt)[#title]
   ]
-
-  // 论文副题名
   if subtitle != "" {
-    v(1em)
     align(center)[
-      #text(font: heiti, size: 20pt, weight: "bold")[—— #subtitle]
+      #text(size: 20pt)[—— *#subtitle*]
     ]
   }
 
-  v(6em)
+  v(12em)
 
-  // 个人信息栏
-  let info-key(body) = {
-    text(font: heiti, size: 20pt, weight: "bold")[#body]
-  }
-
-  let info-value(body) = {
-    set align(center)
-    rect(
-      width: 100%,
-      stroke: (bottom: 1pt + black),
-      outset: (bottom: 4pt),
-    )[
-      #text(font: heiti, size: 20pt, weight: "bold")[#body]
-    ]
-  }
-
-  let info-row(key, value) = {
-    grid(
-      columns: (120pt, 1fr),
-      column-gutter: 10pt,
-      align(right, info-key(key + "：")), info-value(value),
+  set text(size: 20pt)
+  pad(left: 4em)[
+    #grid(
+      columns: (3.5em, auto, auto),
+      row-gutter: 1.2em,
+      column-gutter: 0.5em,
+      ..info-row("作者", author),
+      ..info-row("学院", school),
+      ..info-row("专业", major),
+      ..info-row("年级", grade),
+      ..info-row("学号", student-id),
+      ..info-row("指导教师", advisor),
+      ..info-row("论文成绩", score),
+      ..info-row("日期", date),
     )
-    v(1.5em)
-  }
-
-  pad(left: 5em, right: 2em)[
-    #info-row("作　　者", author)
-    #info-row("学　　院", school)
-    #info-row("专　　业", major)
-    #info-row("年　　级", grade)
-    #info-row("学　　号", student-id)
-    #info-row("指导教师", advisor)
-    #info-row("论文成绩", score)
-    #info-row("日　　期", date)
   ]
-
   pagebreak()
 }
