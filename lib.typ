@@ -4,6 +4,7 @@
 #import "src/body.typ": body-style
 #import "src/cover.typ": cover
 #import "src/header.typ": header
+#import "src/outline.typ": outline-page
 
 
 #let project(
@@ -52,5 +53,6 @@
     abstract-en: abstract-en,
     keywords-en: keywords-en,
   )
+  outline-page()
   body-style(body)
 }
