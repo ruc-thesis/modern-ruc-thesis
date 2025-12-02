@@ -13,64 +13,105 @@
 
 ## 📦 安装与使用
 
-### 方式一：使用官方包（开发中 🚧）
+### 1. 安装 Typst
 
-目前本模板尚未发布到 Typst 官方仓库（Universe）。待发布后，你将可以直接通过以下命令初始化项目：
+1. 安装 [VS Code](https://code.visualstudio.com/)。
+2. 在 VS Code 扩展商店中搜索并安装 **Tinymist** 插件。
+   - 该插件提供了语法高亮、实时预览、自动补全等功能。
+   - 安装后，打开 `.typ` 文件即可自动激活，点击右上角的 "Preview" 按钮即可查看实时预览。
 
-```bash
-typst init @preview/ruc-thesis-typst:0.1.0
-```
-
-### 方式二：安装为本地包（推荐）
-
-如果你希望在不同的项目中复用此模板，或者离线使用，可以将本仓库安装为 **本地包**。
-
-#### 1. 下载并放置到指定目录
-
-你需要将本仓库克隆到 Typst 的本地包目录中。目录路径如下：
-
-- **Windows**: `%APPDATA%\typst\packages\local\ruc-thesis-typst\0.1.0`
-- **macOS**: `~/Library/Application Support/typst/packages/local/ruc-thesis-typst/0.1.0`
-- **Linux**: `~/.local/share/typst/packages/local/ruc-thesis-typst/0.1.0`
-
-以 Windows 为例，在 PowerShell 中执行：
-
-```powershell
-# 创建目录
-mkdir "$env:APPDATA\typst\packages\local\ruc-thesis-typst\0.1.0"
-
-# 克隆仓库到该目录
-git clone https://github.com/ruc-thesis/ruc-thesis-typst.git "$env:APPDATA\typst\packages\local\ruc-thesis-typst\0.1.0"
-```
-
-#### 2. 初始化项目
-
-安装完成后，你就可以在任何地方使用 `typst init` 命令来创建基于本模板的新项目了：
+### 2. 获取模板
+你可以直接克隆本仓库，或者下载 ZIP 压缩包解压。
 
 ```bash
-typst init @local/ruc-thesis-typst:0.1.0 my-thesis
+git clone https://github.com/ruc-thesis/ruc-thesis-typst.git
 ```
 
-### 方式三：直接克隆（最简单）
+### 3. 开始写作
+本模板的主要文件结构如下，请在对应文件中填写内容：
 
-如果你不想折腾环境变量，也可以直接克隆本仓库，然后在 `template` 目录中开始写作。
+- **`template/main.typ`**: **主控文件**。
+  - 在这里填写论文的**基本信息**（标题、作者、学院、摘要等）。
+  - 在这里**引用章节**（如 `#include "chapters/chapter1.typ"`）。
+  - 在这里配置**参考文献**和**附录**。
+- **`template/chapters/`**: **章节目录**。
+  - 在这里创建并编写你的正文章节（如 `chapter1.typ`, `chapter2.typ`）。
+- **`template/refs.bib`**: **参考文献数据**。
+  - 使用 BibTeX 格式存储你的参考文献条目。
+- **`template/acknowledgement.typ`**: **致谢**。
+  - 书写致谢内容。
+- **`template/appendix.typ`**: **附录**。
+  - 书写附录内容。
 
-1.  克隆仓库：
-    ```bash
-    git clone https://github.com/ruc-thesis/ruc-thesis-typst.git
-    ```
-2.  进入 `template` 目录，修改 `main.typ` 开始写作。
-3.  编译：
-    ```bash
-    typst compile main.typ
-    ```
+### 4. 编译
+- **VS Code**: 打开 `template/main.typ`，点击右上角的预览按钮，保存时会自动编译。
+- **命令行**: 在项目根目录下运行：
+  ```bash
+  typst compile template/main.typ
+  ```
 
-## 📝 字体要求
+## ✍️ Typst 基本语法简述
 
-- **宋体** (SimSun)
-- **黑体** (SimHei)
-- **楷体** (KaiTi)
-- **Times New Roman**
+Typst 的语法简洁直观，以下是一些常用语法：
+
+### 标题与层级
+使用 `=` 表示标题，数量表示层级：
+```typst
+= 一级标题
+== 二级标题
+=== 三级标题
+```
+
+### 文本格式
+- **加粗**：`*加粗内容*`
+- _斜体_：`_斜体内容_`
+- `代码`：`` `行内代码` ``
+
+### 列表
+- **无序列表**：使用 `-`
+  ```typst
+  - 项目 1
+  - 项目 2
+  ```
+- **有序列表**：使用 `+`
+  ```typst
+  + 第一步
+  + 第二步
+  ```
+
+### 数学公式
+- **行内公式**：使用 `$` 包裹，如 `$E = mc^2$`。
+- **独行公式**：使用 `$ ` 包裹（加空格），如：
+  ```typst
+  $ a^2 + b^2 = c^2 $
+  ```
+
+### 图片与表格
+- **图片**：
+  ```typst
+  #figure(
+    image("path/to/image.png", width: 80%),
+    caption: [图片标题],
+  )
+  ```
+- **表格**：
+  ```typst
+  #figure(
+    table(
+      columns: 2,
+      [表头1], [表头2],
+      [内容1], [内容2],
+    ),
+    caption: [表格标题],
+  )
+  ```
+
+### 引用
+
+- **引用文献**：使用 `@key`，如 `@wang2001`。
+- **引用图表**：在图表后添加标签 `<label>`，然后使用 `@label` 引用。
+
+更多语法请参考 [Typst 官方文档](https://typst.app/docs)。
 
 ## 🛠️ 开发者
 

@@ -5,7 +5,6 @@
 ## 📚 文档导航
 
 - [排版要求 (requirements.md)](requirements.md): 详细记录了学校对毕业论文的排版要求（字号、页边距等），开发时请严格参考此文档。
-- [待办事项 (TODO.md)](TODO.md): 记录了当前项目的开发进度和待完成的功能。
 
 ## 🏗️ 项目结构
 
@@ -15,7 +14,6 @@ ruc-thesis-typst/
 ├── lib.typ                 # [核心] 模板入口文件
 ├── docs/                   # [文档] 开发与使用文档
 │   ├── requirements.md     # [参考] 排版要求文档
-│   ├── TODO.md             # [计划] 待办事项
 │   └── DEV.md              # 开发者指南
 ├── assets/                 # [资源] 存放模板必须的静态资源
 │   └── ruc-logo-header.png # 页眉用的学校Logo
