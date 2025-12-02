@@ -59,7 +59,7 @@
   ]
   if subtitle != "" {
     align(center)[
-      #text(size: 20pt)[—— *#subtitle*]
+      #text(size: 20pt)[——*#subtitle*]
     ]
   }
 

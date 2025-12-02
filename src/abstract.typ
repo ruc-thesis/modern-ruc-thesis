@@ -8,6 +8,9 @@
   abstract-en: [],
   keywords-en: (),
 ) = {
+  set page(numbering: "I")
+  counter(page).update(1)
+
   set par(leading: 1.28em, spacing: 1.28em)
 
   align(center)[
@@ -21,7 +24,7 @@
   v(1em)
   par(first-line-indent: 0em)[
     #text(font: heiti, weight: "bold")[关键词：]
-    #text(font: songti,keywords-zh.join(h(1.5em)))
+    #text(font: songti, keywords-zh.join(h(1.5em)))
   ]
 
   pagebreak()
@@ -38,7 +41,7 @@
   v(1em)
   par(first-line-indent: 0em)[
     #text(font: heiti, weight: "bold")[Key Words:]
-    #text(font: songti,keywords-en.join(h(1.5em)))
+    #text(font: songti, keywords-en.join(h(1.5em)))
   ]
 
   pagebreak()

@@ -2,7 +2,7 @@
 
 #show: project.with(
   title: "对毕业论文模板的研究",
-  subtitle: "一个Typst模板",
+  subtitle: "以Typst模板为例",
   author: "张三",
   school: "信息学院",
   major: "计算机科学与技术",

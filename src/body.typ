@@ -25,12 +25,7 @@
     justify: true,
   )
 
-  set text(
-    font: songti,
-    size: zh(4.5),
-    lang: "zh",
-    region: "cn",
-  )
+  set text(font: songti, size: zh(4.5))
 
   show emph: set text(font: kaiti)
   show raw: set text(font: code, size: zh(5))

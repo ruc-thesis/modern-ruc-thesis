@@ -1,11 +1,10 @@
 #import "@preview/cuti:0.4.0": show-cn-fakebold
 
+#import "src/abstract.typ": abstract
 #import "src/body.typ": body-style
 #import "src/cover.typ": cover
 #import "src/header.typ": header
 
-
-#import "src/abstract.typ": abstract
 
 #let project(
   title: "",
@@ -32,6 +31,7 @@
     first-line-indent: (amount: 2em, all: true),
     justify: true,
   )
+  set text(lang: "zh", region: "cn")
 
   cover(
     title: title,
