@@ -2,7 +2,7 @@
 #import "@preview/cuti:0.4.0": show-cn-fakebold
 
 #import "src/fonts.typ": *
-
+#import "src/utils.typ": three-line-table
 
 #let project(
   title: "",
@@ -12,6 +12,7 @@
   body,
 ) = {
   show: show-cn-fakebold
+  show table: three-line-table
 
   set par(
     leading: 1.02em,
@@ -67,5 +68,30 @@
   show heading.where(level: 4): set text(size: zh(5))
   show heading.where(level: 5): set text(size: zh(5))
 
+  set enum(
+    indent: 2em,
+    full: true,
+    numbering: (..n) => {
+      n = n.pos()
+      let level = n.len()
+      let number = ("(1)", "①").at(level - 1, default: "1.")
+      numbering(number, ..n.slice(level - 1))
+    },
+  )
+  set list(indent: 2em, marker: ([●], [○], [■]))
+  show list: it => {
+    set list(indent: 0em)
+    set enum(indent: 0em)
+    it
+  }
+  show enum: it => {
+    set list(indent: 0em)
+    set enum(indent: 0em)
+    it
+  }
+
+
+  show figure.where(kind: table): set figure.caption(position: top)
+  set table(inset: (y: 0.5em))
   body
 }
