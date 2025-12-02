@@ -105,4 +105,9 @@
   // 但是word不会去掉第一页的space，所以这里加上
   v(0.8em)
   body
+
+  v(3.2em)
+  set par(first-line-indent: 0em)
+  text(font: heiti, size: 14pt, weight: "bold")[作者签名：]
+  box(width: 8em, stroke: (bottom: 1pt + black))
 }
