@@ -3,12 +3,14 @@
 #import "src/abstract.typ": abstract
 #import "src/acknownlege.typ": acknowledgement-page
 #import "src/appendix.typ": appendix-page
+#import "src/bibliography.typ": bibliography-page
 #import "src/body.typ": body-style
 #import "src/cover.typ": cover
 #import "src/declaration.typ": declaration
 #import "src/header.typ": header
 #import "src/outline.typ": outline-page
 #import "src/signature.typ": signature
+
 
 #let project(
   title: "",
@@ -28,6 +30,7 @@
   keywords-en: (),
   acknowledgement: none,
   appendix: none,
+  bibliography-file: none,
   body,
 ) = {
   show: show-cn-fakebold
@@ -62,13 +65,16 @@
   outline-page()
 
   show: body-style
+
   body
   signature()
 
+  if bibliography-file != none {
+    bibliography-page(bibliography-file)
+  }
   if appendix != none {
     appendix-page(appendix)
   }
-
   if acknowledgement != none {
     acknowledgement-page(acknowledgement)
   }

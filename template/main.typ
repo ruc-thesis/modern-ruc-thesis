@@ -1,4 +1,4 @@
-#import "../lib.typ": project, acknowledgement-page
+#import "../lib.typ": project
 
 
 #show: project.with(
@@ -27,6 +27,7 @@
   keywords-en: ("Keyword1", "Keyword2", "Keyword3"),
   acknowledgement: include "acknowledgement.typ",
   appendix: include "appendix.typ",
+  bibliography-file: "/template/refs.bib",
 )
 
 #include "chapters/chapter1.typ"
