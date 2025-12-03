@@ -9,19 +9,9 @@
   show table: three-line-table
 
   counter(page).update(1)
-  set page(
-    footer: context {
-      let page_num = counter(page).at(here()).first()
-      set align(center)
-      set text(font: songti, size: zh(5))
-      [第 #page_num 页]
-    },
-  )
+  set page(numbering: "第1页")
   // typst 与 word 定义行距方式并不相同，这里靠目押:(
-  set par(
-    leading: 1.02em,
-    spacing: 1.02em,
-  )
+  set par(leading: 1.02em, spacing: 1.02em)
 
   set text(font: songti, size: zh(4.5))
 
