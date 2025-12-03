@@ -9,6 +9,7 @@ repository = "https://github.com/ruc-thesis/ruc-thesis-typst"
 keywords = ["thesis", "ruc", "template", "typst"]
 compiler = "0.13"
 categories = ["report", "paper"]
+exclude = ["assets/*", "docs/*"]
 
 [template]
 path = "template"

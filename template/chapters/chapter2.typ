@@ -44,7 +44,7 @@
 == 图表
 
 #figure(
-  image("../assets/示例图片.png"),
+  image("../assets/example.png"),
   caption: [明代永宁宣抚司及永宁卫疆域图],
 )
 
