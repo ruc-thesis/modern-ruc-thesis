@@ -37,6 +37,10 @@ typst init @preview/ruc-thesis:0.1.0
 ```bash
 git clone https://github.com/ruc-thesis/ruc-thesis-typst.git
 ```
+也可以使用国内镜像仓库：
+```bash
+git clone https://gitee.com/ruc-thesis/ruc-thesis-typst.git
+```
 
 ### 3. 开始写作
 本模板的主要文件结构如下，请在对应文件中填写内容：
