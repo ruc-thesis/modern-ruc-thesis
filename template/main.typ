@@ -1,4 +1,4 @@
-#import "../lib.typ": project
+#import "@preview/ruc-thesis:0.1.0": project
 
 
 #show: project.with(

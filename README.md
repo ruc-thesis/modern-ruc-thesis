@@ -21,10 +21,47 @@
    - 安装后，打开 `.typ` 文件即可自动激活，点击右上角的 "Preview" 按钮即可查看实时预览。
 
 ### 2. 获取模板
-你可以直接克隆本仓库，或者下载 ZIP 压缩包解压。
+
+你可以根据需求选择以下任意一种方式：
+
+#### 方式一：使用 Typst CLI (推荐)
+
+你需要先从官方 [Typst](https://github.com/typst/typst) 下载并安装 Typst CLI。如果你的 Typst 版本 >= 0.13.0，可以直接从官方包仓库初始化：
+```bash
+typst init @preview/ruc-thesis:0.1.0
+```
+
+#### 方式二：安装为本地包
+如果你想使用开发版，可以将本仓库克隆到本地包目录（参考 [Typst 文档](https://github.com/typst/packages/blob/main/README.md)）：
 
 ```bash
+# 请将 {data-dir} 替换为你的系统对应路径
+git clone https://github.com/ruc-thesis/ruc-thesis-typst.git "{data-dir}/typst/packages/local/ruc-thesis/0.1.0"
+```
+
+**`{data-dir}` 路径说明：**
+- **Linux**: `$XDG_DATA_HOME` 或 `~/.local/share`
+- **macOS**: `~/Library/Application Support`
+- **Windows**: `%APPDATA%` (即 `C:\Users\<用户名>\AppData\Roaming`)
+
+安装完成后，运行：
+```bash
+typst init @local/ruc-thesis:0.1.0
+```
+
+#### 方式三：直接克隆 (传统方式)
+
+直接克隆本仓库或者下载 ZIP 压缩包解压到任意位置：
+```bash
 git clone https://github.com/ruc-thesis/ruc-thesis-typst.git
+```
+**⚠️ 注意**：使用此方式时，你需要手动修改 `template/main.typ`，将包导入改为本地相对路径导入：
+```typst
+// 修改前
+#import "@preview/ruc-thesis:0.1.0": project
+
+// 修改后
+#import "../lib.typ": project
 ```
 
 ### 3. 开始写作
