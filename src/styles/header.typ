@@ -1,4 +1,4 @@
-#let header(header-path) = it => {
+#let header(header-path, body) = {
   set page(
     paper: "a4",
     margin: (
@@ -16,5 +16,5 @@
     header-ascent: 1.2em,
   )
 
-  it
+  body
 }

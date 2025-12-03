@@ -1,14 +1,14 @@
 #import "@preview/cuti:0.4.0": show-cn-fakebold
 
-#import "src/abstract.typ": abstract
-#import "src/acknownlege.typ": acknowledgement-page
-#import "src/appendix.typ": appendix-page
-#import "src/body.typ": body-style
-#import "src/cover.typ": cover
-#import "src/declaration.typ": declaration
-#import "src/header.typ": header
-#import "src/outline.typ": outline-page
-#import "src/signature.typ": signature
+#import "src/pages/abstract.typ": abstract
+#import "src/pages/acknownledge.typ": acknowledgement-page
+#import "src/pages/appendix.typ": appendix-page
+#import "src/pages/cover.typ": cover
+#import "src/pages/declaration.typ": declaration
+#import "src/pages/outline.typ": outline-page
+#import "src/pages/signature.typ": signature
+#import "src/styles/body.typ": body-style
+#import "src/styles/header.typ": header
 
 
 #let project(
@@ -33,7 +33,7 @@
   body,
 ) = {
   show: show-cn-fakebold
-  show: header("/assets/ruc-logo-header-gray.svg")
+  show: header.with("/assets/ruc-logo-header-gray.svg")
 
   set par(
     first-line-indent: (amount: 2em, all: true),

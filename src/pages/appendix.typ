@@ -1,4 +1,5 @@
-#import "./fonts.typ": *
+#import "/src/fonts.typ": *
+
 
 #let appendix-page(body) = {
   set heading(numbering: none)

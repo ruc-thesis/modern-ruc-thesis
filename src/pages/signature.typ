@@ -1,4 +1,4 @@
-#import "./fonts.typ": *
+#import "/src/fonts.typ": *
 
 
 #let signature() = {

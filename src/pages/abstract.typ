@@ -1,6 +1,7 @@
 #import "@preview/pointless-size:0.1.2": zh
 
-#import "fonts.typ": *
+#import "/src/fonts.typ": *
+
 
 #let abstract(
   abstract-zh: [],

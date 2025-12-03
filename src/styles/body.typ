@@ -1,8 +1,8 @@
 #import "@preview/cuti:0.4.0": show-cn-fakebold
 #import "@preview/pointless-size:0.1.2": zh
 
-#import "./fonts.typ": *
-#import "./utils.typ": three-line-table
+#import "/src/fonts.typ": *
+#import "/src/utils.typ": three-line-table
 
 
 
