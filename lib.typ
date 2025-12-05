@@ -35,7 +35,7 @@
   body,
 ) = {
   show: show-cn-fakebold
-  show: header.with("/assets/ruc-logo-header-gray.svg")
+  show: header.with("/logos/ruc-logo-header-gray.svg")
 
   set par(
     first-line-indent: (amount: 2em, all: true),
