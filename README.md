@@ -13,38 +13,47 @@ This is an unofficial undergraduate thesis Typst template for Renmin University 
 - **自动化**：自动生成目录、图表索引，自动处理参考文献引用。
 - **模块化**：章节分离，结构清晰，易于维护。
 
-## 📦 安装与使用
+## 📦 安装
 
-### 1. 安装 Typst
+### 在 VSCode 中本地编辑（推荐）
 
 1. 安装 [VS Code](https://code.visualstudio.com/)。
 2. 在 VS Code 扩展商店中搜索并安装 **Tinymist** 插件。
    - 该插件提供了语法高亮、实时预览、自动补全等功能。
    - 安装后，打开 `.typ` 文件即可自动激活，点击右上角的 "Preview" 按钮即可查看实时预览。
+3. 你可以通过下面 2 种方式来获取模板：
+   - **从 Typst Universe 获取模板**：
+     - 按下 `Cmd / Ctrl + Shift + P` 打开命令界面
+     - 输入 `Typst: Show available Typst templates (gallery) for picking up a template` 打开 Tinymist 提供的 Template Gallery
+     - 在列表中搜索 `modern-ruc-thesis`，点击 `❤` 按钮收藏，点击 `+` 来创建论文模板
+     ![search-result](https://raw.githubusercontent.com/Dawnfz-Lenfeng/imgs/master/20251206142357967.png)
+   - **从 git 获取模板**：由于 Typst Universe 上的文件更新可能有延迟，你可以 clone 本仓库或者下载 ZIP 压缩包解压到任意位置来保证使用最新的模板文件：
+     ```bash
+     git clone https://github.com/ruc-thesis/modern-ruc-thesis.git
+     ```
+     也可以使用国内镜像仓库：
+     ```bash
+     git clone https://gitee.com/ruc-thesis/modern-ruc-thesis.git
+     ```
+     入口文件为 `template/main.typ`。
+4. 获取模板后，用 VS Code 打开生成的目录，打开 `main.typ` (`template/main.typ`) 文件，按下 `Ctrl / Cmd + K V` 或者是点击文档顶部的 Preview 来实时预览。
 
-### 2. 获取模板
+### 在线编辑
 
-你可以根据需求选择以下任意一种方式：
+在 [Typst Web App](https://typst.app/app/) 中选择 `Start from template`，随后搜索 `modern-ruc-thesis` 即可开始使用。
 
-#### 方式一：使用 Typst CLI (推荐)
+![typst-app](https://raw.githubusercontent.com/Dawnfz-Lenfeng/imgs/master/20251206142636783.png)
 
-你需要先从官方 [Typst](https://github.com/typst/typst) 下载并安装 Typst CLI。如果你的 Typst 版本 >= 0.13.0，可以直接从官方包仓库初始化：
-```bash
-typst init @preview/modern-ruc-thesis:0.1.1
-```
+> [!IMPORTANT]
+> 为了在 Web 编辑器中正确显示字体，你需要找到电脑字体文件夹（Windows 下是 `C:\Windows\Fonts`，macOS 下是 `/Library/Fonts`），将模板所需要的字体文件**全部**上传到 Typst Web App 任意位置：
+> - 黑体
+> - 宋体
+> - 楷体
+> - Times New Roman
+> - Consolas
 
-#### 方式二：直接克隆 (传统方式)
+## 🛠️ 写作
 
-直接克隆本仓库或者下载 ZIP 压缩包解压到任意位置：
-```bash
-git clone https://github.com/ruc-thesis/modern-ruc-thesis.git
-```
-也可以使用国内镜像仓库：
-```bash
-git clone https://gitee.com/ruc-thesis/modern-ruc-thesis.git
-```
-
-### 3. 开始写作
 本模板的主要文件结构如下，请在对应文件中填写内容：
 
 - **`template/main.typ`**: **主控文件**。
@@ -59,13 +68,6 @@ git clone https://gitee.com/ruc-thesis/modern-ruc-thesis.git
   - 书写致谢内容。
 - **`template/appendix.typ`**: **附录**。
   - 书写附录内容。
-
-### 4. 编译
-- **VS Code**: 打开 `template/main.typ`，点击右上角的预览按钮，保存时会自动编译。
-- **命令行**: 在项目根目录下运行：
-  ```bash
-  typst compile template/main.typ
-  ```
 
 ## ✍️ Typst 基本语法简述
 
