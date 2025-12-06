@@ -26,7 +26,7 @@ This is an unofficial undergraduate thesis Typst template for Renmin University 
      - 先从官方 [Typst](https://github.com/typst/typst) 下载并安装 Typst CLI
      - 然后在命令行输入：
        ```bash
-       typst init @preview/modern-ruc-thesis:0.1.1
+       typst init @preview/modern-ruc-thesis
        ```
    - **Tinymist**：
      - 按下 `Cmd / Ctrl + Shift + P` 打开命令界面
