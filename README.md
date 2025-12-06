@@ -21,21 +21,27 @@ This is an unofficial undergraduate thesis Typst template for Renmin University 
 2. 在 VS Code 扩展商店中搜索并安装 **Tinymist** 插件。
    - 该插件提供了语法高亮、实时预览、自动补全等功能。
    - 安装后，打开 `.typ` 文件即可自动激活，点击右上角的 "Preview" 按钮即可查看实时预览。
-3. 你可以通过下面 2 种方式来获取模板：
-   - **从 Typst Universe 获取模板**：
+3. 你可以通过下面 3 种方式来获取模板：
+   - **Typst Cli**：
+     - 先从官方 [Typst](https://github.com/typst/typst) 下载并安装 Typst CLI
+     - 然后在命令行输入：
+       ```bash
+       typst init @preview/modern-ruc-thesis:0.1.1
+       ```
+   - **Tinymist**：
      - 按下 `Cmd / Ctrl + Shift + P` 打开命令界面
      - 输入 `Typst: Show available Typst templates (gallery) for picking up a template` 打开 Tinymist 提供的 Template Gallery
      - 在列表中搜索 `modern-ruc-thesis`，点击 `❤` 按钮收藏，点击 `+` 来创建论文模板
      ![search-result](https://raw.githubusercontent.com/Dawnfz-Lenfeng/imgs/master/20251206142357967.png)
-   - **从 git 获取模板**：由于 Typst Universe 上的文件更新可能有延迟，你可以 clone 本仓库或者下载 ZIP 压缩包解压到任意位置来保证使用最新的模板文件：
-     ```bash
-     git clone https://github.com/ruc-thesis/modern-ruc-thesis.git
-     ```
-     也可以使用国内镜像仓库：
-     ```bash
-     git clone https://gitee.com/ruc-thesis/modern-ruc-thesis.git
-     ```
-     入口文件为 `template/main.typ`。
+   - **git**：由于 Typst Universe 上的文件更新可能有延迟，你可以 clone 本仓库或者下载 ZIP 压缩包解压到任意位置来保证使用最新的模板文件：
+     - GitHub：
+       ```bash
+       git clone https://github.com/ruc-thesis/modern-ruc-thesis.git
+       ```
+     - Gitee（国内镜像仓库）：
+       ```bash
+       git clone https://gitee.com/ruc-thesis/modern-ruc-thesis.git
+       ```
 4. 获取模板后，用 VS Code 打开生成的目录，打开 `main.typ` (`template/main.typ`) 文件，按下 `Ctrl / Cmd + K V` 或者是点击文档顶部的 Preview 来实时预览。
 
 ### 在线编辑
