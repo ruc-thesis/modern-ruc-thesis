@@ -10,7 +10,7 @@
   set align(center)
 
   outline(
-    depth: 3,
+    depth: 2,
     title: text(font: heiti, size: zh(3), weight: "bold")[目录],
   )
 
