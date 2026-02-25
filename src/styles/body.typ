@@ -67,6 +67,7 @@
     it
   }
 
+  show figure: set block(breakable: true)
   show figure.where(kind: table): set figure.caption(position: top)
   set table(inset: (y: 0.5em))
 
