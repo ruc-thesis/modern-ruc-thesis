@@ -46,7 +46,7 @@
 #figure(
   image("../assets/example.png"),
   caption: [明代永宁宣抚司及永宁卫疆域图],
-)
+) <fig:example>
 
 表格会自动使用三线表格式：
 
@@ -63,7 +63,9 @@
     [发光强度], [坎[德拉]], [cd],
   ),
   caption: [国际单位制的基本单位],
-)
+) <tab:base_unit>
+
+你可以设置标签`<lable>`，然后使用`@lable`来引用，例如@fig:example 和@tab:base_unit。
 
 == 代码块
 
