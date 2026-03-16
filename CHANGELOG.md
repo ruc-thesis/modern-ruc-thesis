@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/ruc-thesis/modern-ruc-thesis/compare/v0.1.1...v0.1.2) (2026-03-16)
+
+
+### Features
+
+* **figure:** set breakable ([8254692](https://github.com/ruc-thesis/modern-ruc-thesis/commit/8254692df7424e3fe590615e9ddee66920e26e98))
+* **outline:** change depth in outline ([a39ba4b](https://github.com/ruc-thesis/modern-ruc-thesis/commit/a39ba4bbdbffa99bf842e52f56a887d3af920657))
+* remove space before body & change param type of sign and decl ([f6c139f](https://github.com/ruc-thesis/modern-ruc-thesis/commit/f6c139f5446d7a8bd59223bf33118df90ae2286d))
+
 ### [0.1.1](https://github.com/ruc-thesis/modern-ruc-thesis/compare/v0.1.0...v0.1.1) (2025-12-05)
 
 
