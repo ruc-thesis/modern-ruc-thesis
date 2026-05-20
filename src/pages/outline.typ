@@ -5,7 +5,7 @@
 
 #let outline-page() = {
   set text(font: songti, size: zh(4.5))
-  set page(numbering: "I")
+  set page(numbering: none)
   set par(leading: 1.25em)
   set align(center)
 

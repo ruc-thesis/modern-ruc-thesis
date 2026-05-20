@@ -9,7 +9,7 @@
   show table: three-line-table
 
   counter(page).update(1)
-  set page(numbering: "第1页")
+  set page(numbering: "1", footer: context align(center)[第#counter(page).display("1")页])
   // typst 与 word 定义行距方式并不相同，这里靠目押:(
   set par(leading: 1.02em, spacing: 1.02em)
 
