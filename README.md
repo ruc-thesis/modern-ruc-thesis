@@ -34,7 +34,7 @@ This is an unofficial undergraduate thesis Typst template for Renmin University 
      - 按下 `Cmd / Ctrl + Shift + P` 打开命令界面
      - 输入 `Typst: Show available Typst templates (gallery) for picking up a template` 打开 Tinymist 提供的 Template Gallery
      - 在列表中搜索 `modern-ruc-thesis`，点击 `❤` 按钮收藏，点击 `+` 来创建论文模板
-     ![search-result](./assets/search-result.png)
+     ![Tinymist Template Gallery 搜索结果](./assets/search-result.png)
    - **git**：由于 Typst Universe 上的文件更新可能有延迟，你可以 clone 本仓库或者下载 ZIP 压缩包解压到任意位置来保证使用最新的模板文件：
      - GitHub：
        ```bash
@@ -50,10 +50,9 @@ This is an unofficial undergraduate thesis Typst template for Renmin University 
 
 在 [Typst Web App](https://typst.app/app/) 中选择 `Start from template`，随后搜索 `modern-ruc-thesis` 即可开始使用。
 
-![typst-app](./assets/typst-app.png)
+![Typst Web App 模板选择界面](./assets/typst-app.png)
 
-> [!IMPORTANT]
-> 为了在 Web 编辑器中正确显示字体，你需要找到电脑字体文件夹（Windows 下是 `C:\Windows\Fonts`，macOS 下是 `/Library/Fonts`），将模板所需要的字体文件**全部**上传到 Typst Web App 任意位置：
+> **重要提示：** 为了在 Web 编辑器中正确显示字体，你需要找到电脑字体文件夹（Windows 下是 `C:\Windows\Fonts`，macOS 下是 `/Library/Fonts`），将模板所需要的字体文件**全部**上传到 Typst Web App 任意位置：
 > - 黑体
 > - 宋体
 > - 楷体
@@ -147,13 +146,13 @@ Typst 的语法简洁直观，以下是一些常用语法：
 
 ## ⭐ 效果预览
 
-![cover](./assets/output-01.png)
-![page1](./assets/output-06.png)
-![page2](./assets/output-07.png)
+![论文封面预览](./assets/output-01.png)
+![论文正文预览](./assets/output-06.png)
+![论文目录预览](./assets/output-07.png)
 
 ## 🛠️ 开发者
 
-如果你是开发者，或者想为本项目贡献代码，请阅读 [开发者指南](docs/DEV.md)。
+如果你是开发者，或者想为本项目贡献代码，请阅读 [开发者指南](https://github.com/ruc-thesis/modern-ruc-thesis/blob/master/docs/DEV.md)。
 
 ## 📄 许可证
 
